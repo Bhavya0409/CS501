@@ -1,0 +1,13 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start3": "javac C2E15Distance.java && java C2E15Distance",
+    "start4": "javac C2E19AreaOfTriangle.java && java C2E19AreaOfTriangle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
