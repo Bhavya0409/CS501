@@ -11,6 +11,7 @@ public class C3E27PointsInTriangle {
         System.out.print("Enter a point's x- and y-coordinates seperated by a space ");
         double x = input.nextDouble();
         double y = input.nextDouble();
+        input.close();
         
         double xIntersect = (-x * (200 * 100)) / (-y * 200 - x * 100);
         double yIntersect = (-y * (200 * 100)) / (-y * 200 - x * 100);

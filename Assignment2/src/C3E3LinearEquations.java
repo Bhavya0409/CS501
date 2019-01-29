@@ -15,6 +15,7 @@ public class C3E3LinearEquations {
         double d = input.nextDouble();
         double e = input.nextDouble();
         double f = input.nextDouble();
+        input.close();
         System.out.println("The value of a is: " + a);
         System.out.println("The value of a is: " + b);
         System.out.println("The value of a is: " + c);
