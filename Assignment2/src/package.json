@@ -1,0 +1,13 @@
+{
+	"name": "src",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start3": "javac C4E2GreatCircleDistance.java && java C4E2GreatCircleDistance",
+		"start4": "javac C4E4EnclosedArea.java && java C4E4EnclosedArea"
+	},
+	"author": "",
+	"license": "ISC"
+}
