@@ -1,0 +1,13 @@
+{
+	"name": "Assignment3",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start7": "javac C7E91020ArrayElements.java && java C7E91020ArrayElements"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
