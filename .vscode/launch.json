@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - C56E162010",
+            "request": "launch",
+            "mainClass": "C56E162010"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - C7E91020ArrayElements",
+            "request": "launch",
+            "mainClass": "C7E91020ArrayElements"
+        }
+    ]
+}
