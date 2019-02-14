@@ -92,6 +92,7 @@ public class C56E162010 {
             }
         
         }
+        System.out.println("Program exit.");
         input.close();
         
     }
