@@ -19,7 +19,7 @@ public class C7E91020ArrayElements {
 		double largestNumber = max(array);
 		for(int i = 0; i < array.length; i++){
 			if (array[i] == largestNumber){
-				indexLargestElement = i;
+				indexLargestElement = i + 1;
 				break;
 			}
 		}
