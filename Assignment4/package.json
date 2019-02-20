@@ -1,0 +1,12 @@
+{
+	"name": "Assignment4",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start1": "javac TestRectangle.java && java TestRectangle"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
