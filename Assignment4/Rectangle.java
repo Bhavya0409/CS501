@@ -2,6 +2,7 @@
  *
  * @author Jonathan Fishkin, Bhavya Shah
  * I pledge that I have abided by the Stevens Honor System
+ * Chapter 9 exercise 1
  */
 public class Rectangle {
 
