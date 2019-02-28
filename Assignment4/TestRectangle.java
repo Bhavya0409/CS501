@@ -16,8 +16,16 @@ public class TestRectangle {
 			while(next) {
 				System.out.println("Please enter the width of the rectangle.");
 				String width = input.nextLine();
+				while (width.trim().length() == 0) {
+					System.out.println("Please enter the width of the rectangle.");
+					width = input.nextLine();
+				}
 				System.out.println("Please enter the height of the rectangle.");
 				String height = input.nextLine();
+				while (height.trim().length() == 0) {
+					System.out.println("Please enter the height of the rectangle.");
+					height = input.nextLine();
+				}
 				try {
 					Rectangle rectangle = new Rectangle(width, height);
 					rectangle.print();

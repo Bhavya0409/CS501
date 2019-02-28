@@ -50,7 +50,7 @@ public class Rectangle {
 				return false;
 			}
 		} catch (Exception e) {
-			errorMessage = "Please enter a valid number.";
+			errorMessage = "Please make sure both width and height values are valid numbers.";
 			return false;
 		}
 		return true;
