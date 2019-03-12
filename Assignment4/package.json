@@ -4,7 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start1": "javac TestRectangle.java && java TestRectangle"
+		"start1": "javac TestRectangle.java && java TestRectangle",
+		"start2": "javac TestLinearEquation.java && java TestLinearEquation",
+		"start3": "javac Test2PointsIntersection.java && java Test2PointsIntersection"
 	},
 	"keywords": [],
 	"author": "",
