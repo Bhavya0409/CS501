@@ -55,7 +55,7 @@ public class C6E18CheckPassword {
 
         while (next) {
             System.out.print("Please enter a new password: ");
-            String password = input.next();
+            String password = input.nextLine();
 
             try {
                 isPasswordValid(password);  
@@ -65,7 +65,7 @@ public class C6E18CheckPassword {
             }
 
             System.out.println("Would you like to try another password? Type 'no' to exit, or 'yes' to continue");
-            String toContinue = input.next(); 
+            String toContinue = input.nextLine(); 
             if (toContinue.equals("yes")) {   //test for users input to continue the loop
                 next = true;
             } else if(toContinue.equals("no")){
