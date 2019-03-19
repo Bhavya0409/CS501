@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestLinearEquation",
+            "request": "launch",
+            "mainClass": "TestLinearEquation",
+            "projectName": "CS501_8c0291df"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - C56E162010",
             "request": "launch",
             "mainClass": "C56E162010"
