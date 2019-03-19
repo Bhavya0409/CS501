@@ -54,7 +54,7 @@ public class C6E18CheckPassword {
         Scanner input = new Scanner(System.in);
 
         while (next) {
-            System.out.print("Please enter a new password: ");
+            System.out.print("Please enter a new password that has at least 10 characters, consists of only letters and digits, and contains at least three digits: ");
             String password = input.nextLine();
 
             try {
