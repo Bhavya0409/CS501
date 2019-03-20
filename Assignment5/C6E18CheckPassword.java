@@ -74,7 +74,6 @@ public class C6E18CheckPassword {
                 next = false;
             }
         }
-
         System.out.println("Program exit.");
         input.close();
     }
