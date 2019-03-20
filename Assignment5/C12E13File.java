@@ -9,9 +9,6 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
  public class C12E13File {
-    private static int numLines = 0;
-    private static int numCharacters = 0;
-    private static int numWords = 0;
     private static boolean next = true;
     public static void main(String[] args) {
         System.out.println("This program asks to chose a .txt file and will output the number of lines, words, and characters");
@@ -50,7 +47,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
                     System.out.println("The file you are looking for cannot be found ");
                 }
             }
-            
+
             System.out.println("Would you like to open another file? Type 'no' to exit, or 'yes' to continue ");
             String toContinue = input.nextLine(); //loops to see if user wants to try another file out
             if (toContinue.equals("yes")) {  
