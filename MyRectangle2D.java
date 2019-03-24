@@ -7,7 +7,7 @@
 
  public class MyRectangle2D {
     private double x, y, width, height;
-    private String errorMessage = "Error";
+    private String errorMessage = "Error please provide numbers greater than 0";
     public MyRectangle2D() { //empty constructor
         this(0,0,1,1);
     }
@@ -77,6 +77,27 @@
     
 	public double getPerimeter() {
 		return 2 * (width + height);
+    }
+
+    private double getDistance(double p1, double p2) { //gets the distance
+		return Math.sqrt(Math.pow(p2 - p1, 2));
+	}
+    
+	public boolean contains(double x, double y) {      //if specified points are inside rectangle
+		return getDistance(this.y, y) <= height / 2 && 
+				 getDistance(this.x, x) <= width / 2; 
+	}
+
+	public boolean contains(MyRectangle2D r) {  //test whether provided rectangle is inside this rectangle
+		return getDistance(y, r.getY()) + r.getHeight() / 2 <= height / 2 &&  getDistance(x, r.getX()) + r.getWidth() / 2 <= width / 2 &&
+			height / 2 + r.getHeight() / 2 <= height &&
+		 	width / 2 + r.getWidth() / 2 <= width;
+	}
+
+	public boolean overlaps(MyRectangle2D r) {  //test if rectangles overlap
+		return !contains(r) && ((x + width / 2 > r.getX() - r.getWidth()) || (y + height / 2 > r.getY() - r.getHeight()))  &&
+		  		 (getDistance(y, r.getY()) < height / 2 + r.getHeight() / 2) && 
+				 (getDistance(x, r.getX()) < width / 2 + r.getWidth() / 2);
 	}
 
  }
