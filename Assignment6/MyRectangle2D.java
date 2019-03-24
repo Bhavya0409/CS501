@@ -7,12 +7,12 @@
 
  public class MyRectangle2D {
     private double x, y, width, height;
-    private String errorMessage = "Error please provide numbers greater than 0";
-    public MyRectangle2D() { //empty constructor
+    private String errorMessage = "Error";
+    public MyRectangle2D() throws Exception { //empty constructor
         this(0,0,1,1);
     }
 
-    public MyRectangle2D(double x, double y, double width, double height){ //if a point is entered
+    public MyRectangle2D(double x, double y, double width, double height) throws Exception{ //if a point is entered
         setX(x);
         setY(y);
         setWidth(width);
@@ -30,7 +30,7 @@
         if(!isValid(y)){
             throw new Exception(errorMessage);
         }
-		this.x = y;
+		this.y = y;
 	}
 
 	public double getX() {
@@ -65,7 +65,7 @@
     
     private boolean isValid(double value){
         if(value <= 0){
-            errorMessage="Please enter a number thats greater than zero";
+            errorMessage="Error please provide numbers greater than 0";
             return false;
         }
         return true;
@@ -84,8 +84,7 @@
 	}
     
 	public boolean contains(double x, double y) {      //if specified points are inside rectangle
-		return getDistance(this.y, y) <= height / 2 && 
-				 getDistance(this.x, x) <= width / 2; 
+		return getDistance(this.y, y) <= height / 2 && getDistance(this.x, x) <= width / 2; 
 	}
 
 	public boolean contains(MyRectangle2D r) {  //test whether provided rectangle is inside this rectangle
