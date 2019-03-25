@@ -97,6 +97,19 @@
 		return !contains(r) && ((x + width / 2 > r.getX() - r.getWidth()) || (y + height / 2 > r.getY() - r.getHeight()))  &&
 		  		 (getDistance(y, r.getY()) < height / 2 + r.getHeight() / 2) && 
 				 (getDistance(x, r.getX()) < width / 2 + r.getWidth() / 2);
-	}
+    }
+    
+    public boolean abutment(MyRectangle2D r) {
+        boolean rightSide = (x + width/2) == (r.getX() - r.getWidth() / 2);
+        boolean leftSide = (r.getX() + r.getWidth() /2) == (x - width / 2);
+        boolean upTop = (y + height / 2) == (r.getY() - r.getHeight() / 2);
+        boolean downBottom = (r.getY() + r.getHeight() / 2) == (y - height / 2);
+
+        return rightSide || leftSide || upTop || downBottom;
+    }
+
+    public boolean distinction(MyRectangle2D r){
+        return !contains(r) && !overlaps(r) && !abutment(r);
+    }
 
  }
