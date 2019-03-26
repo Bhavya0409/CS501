@@ -19,7 +19,7 @@ public class TestTriangle {
 		while(next){
 			List<Double> sides = new ArrayList<>();
 			while (sides.size() != 3) {
-				System.out.println("Please enter a side of the rectangle.");
+				System.out.println("Please enter a side of the triangle.");
 				String side = in.nextLine();
 				while (side.trim().length() == 0) {
 						System.out.println("Please enter a valid number.");
