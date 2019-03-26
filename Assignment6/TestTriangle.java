@@ -2,7 +2,7 @@
  *
  * @author Jonathan Fishkin, Bhavya Shah
  * I pledge that I have abided by the Stevens Honor System
- * Chapter 10 exercise 13
+ * Chapter 11 exercise 1
  */
 import java.util.*;
 
