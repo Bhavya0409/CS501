@@ -1,0 +1,13 @@
+{
+	"name": "Assignment6",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"triangle": "javac TestTriangle.java && java TestTriangle"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
