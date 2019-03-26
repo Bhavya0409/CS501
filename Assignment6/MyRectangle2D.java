@@ -20,16 +20,10 @@
     }
 
     public void setX(double x) throws Exception{
-        if(!isValid(x)){
-            throw new Exception(errorMessage);
-        }
         this.x = x;
     }
 
 	public void setY(double y) throws Exception{
-        if(!isValid(y)){
-            throw new Exception(errorMessage);
-        }
 		this.y = y;
 	}
 
@@ -65,7 +59,7 @@
     
     private boolean isValid(double value){
         if(value <= 0){
-            errorMessage="Error please provide numbers greater than 0";
+            errorMessage="Error please provide numbers for length and width greater than 0";
             return false;
         }
         return true;
@@ -109,7 +103,7 @@
     }
 
     public boolean distinction(MyRectangle2D r){
-        return !contains(r) && !overlaps(r) && !abutment(r);
+        return !overlaps(r) && !abutment(r);
     }
 
  }

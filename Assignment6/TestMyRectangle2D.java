@@ -76,6 +76,8 @@
                             System.out.println("Points (" + x2 + "," + y2 + ") from TEST rectangle " + (baseRectangle.contains(Double.parseDouble(x2), Double.parseDouble(y2)) ? "ARE": "ARE NOT")  + " contained in BASE rectangle" );
                             System.out.println("BASE rectangle " + (baseRectangle.contains(testRectangle)? "DOES" : "DOES NOT") + " contain TEST rectangle with points ("  + x2 + "," + y2 + "," + width2 + "," + height2 + ")");
                             System.out.println("TEST rectangle with points (" +  x2 + "," + y2 + "," + width2 + "," + height2 + ") " + (baseRectangle.overlaps(testRectangle) ? "OVERLAPS" : "DOES NOT OVERLAP") + " with BASE rectangle");
+                            System.out.println("TEST rectangle with points (" +  x2 + "," + y2 + "," + width2 + "," + height2 + ") " + (baseRectangle.abutment(testRectangle) ? "HAS ABUTMENT" : "DOES NOT HAVE ABUTMENT") + " with BASE rectangle");
+                            System.out.println("TEST rectangle with points (" +  x2 + "," + y2 + "," + width2 + "," + height2 + ") " + (baseRectangle.distinction(testRectangle) ? "IS DISTINCT" : "IS NOT DISTINCT") + " from BASE rectangle");
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
                         }
@@ -98,7 +100,8 @@
                 System.out.println("Would you like to enter a new BASE rectangle? Type 'no' to exit, or 'yes' to continue ");
 				String toContinue = input.nextLine();
 				if (toContinue.equals("yes")) {   //test for users input to continue the loop
-						secondLoop = true;
+                        secondLoop = true;
+                        thirdLoop = true;
 				} else if(toContinue.equals("no")){
                         secondLoop = false;
 				} else {
@@ -111,6 +114,8 @@
             String toContinue = input.nextLine();
             if (toContinue.equals("yes")) {   //test for users input to continue the loop
                     next = true;
+                    secondLoop = true;
+                    thirdLoop = true;
             } else if(toContinue.equals("no")){
                     next = false;
             } else {
