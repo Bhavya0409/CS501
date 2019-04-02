@@ -48,7 +48,6 @@ public class CarMain extends Application {
             }
         });
 
-        // Create a scene and place it in the stage
         Scene scene = new Scene(test, 600, 100);
         primaryStage.setTitle("Car Project"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
