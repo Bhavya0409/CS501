@@ -6,9 +6,13 @@ import javafx.stage.Stage;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
 public class FanMain extends Application {
+
+	private double width = 350;
+	private double height = 350;
+
 	@Override
 	public void start(Stage primaryStage) {
-		FanProject fanPane = new FanProject();
+		FanProject fanPane = new FanProject(width, height);
 
 		// Create three buttons
 		Button Pause = new Button("Pause");
@@ -43,8 +47,9 @@ public class FanMain extends Application {
 			fanPane.setRandomColor();
 		});
 		// Create a scene and place it in the stage
-		Scene scene = new Scene(borderPane, 350, 350);
-		primaryStage.setTitle("Exercise_15_28"); // Set the stage title
+		Scene scene = new Scene(borderPane, width, height);
+		primaryStage.setResizable(false);
+		primaryStage.setTitle("Fain Main"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene in the stage
 		primaryStage.show(); // Display the stage
 
