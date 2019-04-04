@@ -13,11 +13,12 @@ import javafx.animation.Animation;
 import javafx.animation.Timeline;
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
-
+import javafx.scene.text.Font;
 public class ClockProject extends Pane {
     private int hour;
     private int minute;
     private int second;
+    private String day;
     private Timeline animation;
 
     /** Construct a default clock with the current time*/
@@ -68,6 +69,10 @@ public class ClockProject extends Pane {
         paintClock();
     }
 
+    public String getDay(){
+        return this.day;
+    }
+
     /* Set the current time for the clock */
     public void setCurrentTime() {
         // Construct a calendar for the current date and time
@@ -77,6 +82,23 @@ public class ClockProject extends Pane {
         this.hour = calendar.get(Calendar.HOUR_OF_DAY);
         this.minute = calendar.get(Calendar.MINUTE);
         this.second = calendar.get(Calendar.SECOND);
+
+        int i = calendar.get(Calendar.DAY_OF_WEEK); //Sets the day of the week based on the return from the calendar
+        if(i == 2){
+            this.day = "Monday";           
+        } else if (i==3){
+            this.day = "Tuesday";
+        } else if (i==4){
+            this.day = "Wednesday";
+        } else if (i==5){
+            this.day = "Thursday";
+        } else if (i==6){
+            this.day = "Friday";
+        } else if (i==7){
+            this.day = "Saturday";
+        } else if (i==1){
+            this.day = "Sunday";
+        }
 
         paintClock(); // Repaint the clock
     }
@@ -91,7 +113,8 @@ public class ClockProject extends Pane {
         double centerY2 = getHeight() / 2  + 50;
         Point2D center = new Point2D(centerX, centerY);
         Point2D center2 = new Point2D(centerX, centerY2);
-        // Draw circle
+
+        // Draw circles
         Circle circle = new Circle(centerX, centerY, clockRadius);
         Circle circle2 = new Circle(centerX, centerY2, clockRadius2);
         circle2.setFill(Color.WHITE);
@@ -113,7 +136,6 @@ public class ClockProject extends Pane {
         Line[] dashValuesBig = new Line[12];
         for (int i = 0; i < dashValuesBig.length; i++) {
             Point2D start = new Point2D(centerX + clockRadius * Math.cos(i * 2 * Math.PI / 12), centerY + clockRadius * Math.sin(i * 2 * Math.PI / 12));
-            double coefficient = (i % 5 == 0) ? 0.91 : 0.955;
             Point2D end = getPointBCloserToA(center,start, 0.91);
             dashValuesBig[i] = new Line(start.getX(), start.getY(), end.getX(), end.getY());
         }
@@ -127,7 +149,7 @@ public class ClockProject extends Pane {
         }
 
 
-        // Draw second hand
+        // Draw second hand on smaller clock
         double sLength = clockRadius2 * 0.8;
         double secondX = centerX + sLength * Math.sin(second * (2 * Math.PI / 60));
         double secondY = centerY2 - sLength * Math.cos(second * (2 * Math.PI / 60));
@@ -152,14 +174,21 @@ public class ClockProject extends Pane {
         Line hLine = new Line(centerX, centerY, hourX, hourY);
         hLine.setStroke(Color.GREEN);
 
-        //Draw current time
+        //Draw current time and day
         String time = "Current Time: " + getHour() + ":" + getMinute() + ":" + getSecond();
+        String day = getDay();
         Text timeText = new Text(centerX - (centerX * 0.3), centerY - (centerY * 0.9), time);
+        Text dateText = new Text(centerX - (centerX * 0.15), centerY - (centerY * 0.4), day);
+        dateText.setFont(new Font("Arial", 14));
+        dateText.setStroke(Color.DARKBLUE);
+        dateText.setStrokeWidth(0.5);
 
+        //Clear all nodes and then append them
         getChildren().clear();
         ObservableList<Node> list = getChildren();
         list.add(circle);
         list.add(circle2);
+        list.add(dateText);
         Collections.addAll(list, dashValuesBig);
         Collections.addAll(list, dashValues);
         Collections.addAll(list, textValues);
@@ -178,6 +207,7 @@ public class ClockProject extends Pane {
         paintClock();
     }
 
+    //Method to resolve how close points are to each other
     private Point2D getPointBCloserToA(Point2D a, Point2D b, double coefficient) {
 
         double deltaX = b.getX() - a.getX();

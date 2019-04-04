@@ -35,7 +35,7 @@ public class ClockMain extends Application {
 
 		// Create a scene and place it in the stage
 		Scene scene = new Scene(borderPane, 350, 350);
-		primaryStage.setTitle("Exercise_15_32"); // Set the stage title
+		primaryStage.setTitle("Clock Project"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene in the stage
 		primaryStage.show(); // Display the stage
 	}
