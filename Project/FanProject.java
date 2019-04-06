@@ -19,27 +19,66 @@ import javafx.scene.shape.ArcType;
 import java.awt.BorderLayout;
 import java.util.Random;
 import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.control.Button;
 
-public class FanProject extends StackPane {
+public class FanProject extends BorderPane {
 	private double startAngle = 10; // Start angle of arcs for the fan
 	private Timeline fan; // animation element
 	private Color colorBlades = getRandomColor();
 	private Pane blades;
 	private ObservableList<Node> list;
-	private double width = 0;
-	private double height = 0;
+	private double width = 600;
+	private double height = 350;
 
-	public FanProject(double width, double height) {  //constructs a fan pane
-		this.width = width;
-		this.height = height;
+	public FanProject() {  //constructs a fan pane
 
 		blades = getFullPane(); // Create four arcs
 		list = blades.getChildren(); // List of arcs
 
-		getChildren().add(blades);
+		StackPane mainStack = new StackPane();
+		mainStack.getChildren().add(blades);
+
+	//	getChildren().add(blades);
 		fan = new Timeline(new KeyFrame(Duration.millis(50), e -> spinFan()));
 	    fan.setCycleCount(Timeline.INDEFINITE);
 		fan.play(); // Start animation
+
+
+		// Create three buttons
+		Button Pause = new Button("Pause");
+		Button Resume = new Button("Resume");
+		Button Reverse = new Button("Reverse");
+		Button setColor = new Button("Random Color");
+		HBox hBox = new HBox(5);
+		hBox.setAlignment(Pos.CENTER);
+
+		// Place nodes in panes
+		hBox.getChildren().addAll(Pause, Resume, Reverse, setColor);
+
+		//Add to main borderPane
+		setCenter(mainStack);
+		setBottom(hBox);
+
+		Pause.setOnAction(e -> {
+			this.pause();
+		});
+
+		Resume.setOnAction(e -> {
+			this.play();
+		});
+
+		Reverse.setOnAction(e -> {
+			this.reverse();
+		});
+
+		setColor.setOnAction(e -> {
+			this.setRandomColor();
+		});
+
+	//	this.requestFocus();
+
 	}
 
 	protected void spinFan() { //animate bladed spinning
@@ -90,9 +129,7 @@ public class FanProject extends StackPane {
 		c.setStroke(Color.BLACK);
 		c.setFill(Color.TRANSPARENT);
 		c.setLayoutX(this.width / 2);
-		c.setLayoutY(this.width / 2);
-
-
+		c.setLayoutY(this.height / 2);
 
 		for (int i = 0; i < blades.length; i++) {
 			blades[i] = new Arc(c.getCenterX(), c.getCenterY(), bladeRadius, bladeRadius, (i*90) + 30, 35);
@@ -101,7 +138,6 @@ public class FanProject extends StackPane {
 			blades[i].setLayoutX(this.width / 2);
 			blades[i].setLayoutY(this.height / 2);
 		}
-
 
 		pane.getChildren().addAll(c);
 		pane.getChildren().addAll(blades);

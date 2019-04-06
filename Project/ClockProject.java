@@ -177,8 +177,8 @@ public class ClockProject extends Pane {
         //Draw current time and day
         String time = "Current Time: " + getHour() + ":" + getMinute() + ":" + getSecond();
         String day = getDay();
-        Text timeText = new Text(centerX - (centerX * 0.3), centerY - (centerY * 0.9), time);
-        Text dateText = new Text(centerX - (centerX * 0.15), centerY - (centerY * 0.4), day);
+        Text timeText = new Text(centerX - (centerX * 0.20), centerY - (centerY * 0.9), time);
+        Text dateText = new Text(centerX - (centerX * 0.07), centerY - (centerY * 0.50), day);
         dateText.setFont(new Font("Arial", 14));
         dateText.setStroke(Color.DARKBLUE);
         dateText.setStrokeWidth(0.5);
