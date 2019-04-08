@@ -229,7 +229,8 @@ public class ClockProject extends Pane {
 	}
 
 	public void play() {
-		animation.play();
+        animation.play();
+        setCurrentTime();
 	}
 
 	public void pause() {
